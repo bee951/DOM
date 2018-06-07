@@ -65,4 +65,23 @@ var button=document.createElement('button');
 var btntext=document.createTextNode('Click to add new list item');
 button.appendChild(btntext);
 div1.appendChild(button);
+function clist() {
+    var thing=document.createElement("ul");
+    thing.id='myul';
+    var lit=document.createElement("li");
+    lit.className="li";
+    if (document.getElementById('myul')==null) {
+        var lt=1
+    } else {
+        var liList = document.getElementById('myul').getElementsByClassName("li");
+        var lt = liList.length;
+    }
+    var listtext=document.createTextNode('This is list item '+lt);
+    thing.appendChild(lit);
+    lit.appendChild(listtext);
+    div1.appendChild(thing);
+}
+button.addEventListener("click",function(){
+    clist()
+})
 })
