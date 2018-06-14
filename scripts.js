@@ -68,28 +68,26 @@ button.appendChild(btntext);
 div1.appendChild(button);
 var lt=1;
 var thing=document.createElement("ul");
-div1.appendChild(thing);
-thing.id='myul';
 var lit=document.createElement("li");
 lit.className="li";
 function clist() {
+    div1.appendChild(thing);
     var lit=document.createElement("li");
     var listtext=document.createTextNode('This is list item '+lt);
     thing.appendChild(lit);
     lit.appendChild(listtext);
-    lit.id='li'+lt;
     lit.className="li";
+lit.addEventListener("click",function(){
+    var col=getcolor(colorset)
+    lit.style.color=col
+});
+lit.addEventListener("dblclick",function(){
+    thing.removeChild(lit)
+});
 };
 button.addEventListener("click",function(){
-    clist()
-    lt++
-var itemid=this.onmouseover
-itemid.addEventListener("click",function(){
-    var col=getcolor(colorset)
-    itemid.style.color=col
-});
-itemid.addEventListener("dblclick",function(){
-    thing.removeChild(itemid)
-});
+    clist();
+    lt++;
+
 });
 })
